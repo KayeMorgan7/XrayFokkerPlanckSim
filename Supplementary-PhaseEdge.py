@@ -27,7 +27,7 @@ s = a0*np.sin(x/p0)+b0
 l, = plt.plot(x, s, lw=1, color='grey')
 
 #Intensity with sample
-ms=(z0*(2*np.exp(-x**2)*x*(R0-L0))/(np.sqrt(np.pi)*k0)+1)*(a0*np.sin((x-np.arctan((np.exp(-x**2)*(R0-L0))/(np.sqrt(np.pi)*(k0/z0+(2*np.exp(-x**2)*x*(R0-L0))/(np.sqrt(np.pi))))))/p0)+b0)
+ms=(z0*(2*np.exp(-x**2)*x*(R0-L0))/(np.sqrt(np.pi)*k0)+1)*(a0*np.sin((x/p0-np.arctan((np.exp(-x**2)*(R0-L0))/(p0*np.sqrt(np.pi)*(k0/z0+(2*np.exp(-x**2)*x*(R0-L0))/(np.sqrt(np.pi)))))))+b0)
 m, = plt.plot(x, ms, lw=2, color='black')
 plt.xlabel('Position')
 plt.ylabel('Intensity')
@@ -60,7 +60,7 @@ def update(val):
     R = sR.val
     z = sz.val
     l.set_ydata(a*np.sin(x/p)+b)
-    ms=(z*(2*np.exp(-x**2)*x*(R-L))/(np.sqrt(np.pi)*k0)+1)*(a*np.sin((x-np.arctan((np.exp(-x**2)*(R-L))/(np.sqrt(np.pi)*(k0/z+(2*np.exp(-x**2)*x*(R-L))/(np.sqrt(np.pi))))))/p)+b)
+    ms=(z*(2*np.exp(-x**2)*x*(R-L))/(np.sqrt(np.pi)*k0)+1)*(a*np.sin((x/p-np.arctan((np.exp(-x**2)*(R-L))/(p*np.sqrt(np.pi)*(k0/z+(2*np.exp(-x**2)*x*(R-L))/(np.sqrt(np.pi)))))))+b)
     m.set_ydata(ms)
     
     fig.canvas.draw_idle()
