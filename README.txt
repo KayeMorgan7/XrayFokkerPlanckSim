@@ -4,6 +4,7 @@ Applying the Fokker-Planck equation to grating-based x-ray phase and dark-field 
 
 Kaye S. Morgan, David M. Paganin
 
+https://arxiv.org/abs/1908.01452
 
 Python code to generate an interactive plot for:
 
